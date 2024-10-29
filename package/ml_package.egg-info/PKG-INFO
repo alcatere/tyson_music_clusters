@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: ml_package
+Version: 0.1
+Summary: Non supervised learning for Tyler the producer dataset
+Author: Rafael Arana
+Author-email: alberto2809.rb@gmail.com
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: mlflow
+Requires-Dist: requests
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
