@@ -1,6 +1,6 @@
-artifact_location: mlflow-artifacts:/0
-creation_time: 1730319362754
+artifact_location: file:///Users/rafael/Documents/Proyectos/tyler_non_supervised_mlflow/package/mlruns/0
+creation_time: 1730321927996
 experiment_id: '0'
-last_update_time: 1730319362754
+last_update_time: 1730321927996
 lifecycle_stage: active
 name: Default

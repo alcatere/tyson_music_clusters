@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/rafael/Documents/Proyectos/tyler_non_supervised_mlflow/notebooks/mlruns/927264802494721582/aeccf9df906846daa89039e87e4088d0/artifacts
+end_time: 1730320063882
+entry_point_name: ''
+experiment_id: '927264802494721582'
+lifecycle_stage: active
+run_id: aeccf9df906846daa89039e87e4088d0
+run_name: mysterious-doe-294
+run_uuid: aeccf9df906846daa89039e87e4088d0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730320063820
+status: 3
+tags: []
+user_id: rafael

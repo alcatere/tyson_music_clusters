@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/rafael/Documents/Proyectos/tyler_non_supervised_mlflow/notebooks/mlruns/927264802494721582/d57a0f70c62a4f62a9b16bc0c1ebd6d1/artifacts
+end_time: 1730320134472
+entry_point_name: ''
+experiment_id: '927264802494721582'
+lifecycle_stage: active
+run_id: d57a0f70c62a4f62a9b16bc0c1ebd6d1
+run_name: peaceful-asp-228
+run_uuid: d57a0f70c62a4f62a9b16bc0c1ebd6d1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730320134411
+status: 3
+tags: []
+user_id: rafael
