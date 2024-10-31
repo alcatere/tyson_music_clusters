@@ -1,0 +1,866 @@
+artifact_path: clustering_model
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+mlflow_version: 2.17.1
+model_size_bytes: 51754
+model_uuid: 78971af5d18448859e3bfc9dd388004b
+run_id: e014db0f9d9e4367b7b1a25a6aee4f31
+signature:
+  inputs: '[{"type": "double", "name": "popularity", "required": true}, {"type": "double",
+    "name": "danceability", "required": true}, {"type": "double", "name": "energy",
+    "required": true}, {"type": "double", "name": "loudness", "required": true}, {"type":
+    "double", "name": "speechiness", "required": true}, {"type": "double", "name":
+    "acousticness", "required": true}, {"type": "double", "name": "instrumentalness",
+    "required": true}, {"type": "double", "name": "liveness", "required": true}, {"type":
+    "double", "name": "valence", "required": true}, {"type": "double", "name": "tempo",
+    "required": true}, {"type": "double", "name": "time_signature", "required": true},
+    {"type": "double", "name": "year", "required": true}, {"type": "double", "name":
+    "artist_name_A$AP Mob", "required": true}, {"type": "double", "name": "artist_name_A$AP
+    Rocky", "required": true}, {"type": "double", "name": "artist_name_Brent Faiyaz",
+    "required": true}, {"type": "double", "name": "artist_name_Casey Veggies", "required":
+    true}, {"type": "double", "name": "artist_name_Channel Tres", "required": true},
+    {"type": "double", "name": "artist_name_DJ Drama", "required": true}, {"type":
+    "double", "name": "artist_name_Domo Genesis", "required": true}, {"type": "double",
+    "name": "artist_name_Earl Sweatshirt", "required": true}, {"type": "double", "name":
+    "artist_name_Frank Ocean", "required": true}, {"type": "double", "name": "artist_name_Freddie
+    Gibbs", "required": true}, {"type": "double", "name": "artist_name_GoldLink",
+    "required": true}, {"type": "double", "name": "artist_name_Jaden", "required":
+    true}, {"type": "double", "name": "artist_name_Jet Age of Tomorrow", "required":
+    true}, {"type": "double", "name": "artist_name_Kali Uchis", "required": true},
+    {"type": "double", "name": "artist_name_Kanye West", "required": true}, {"type":
+    "double", "name": "artist_name_La Roux", "required": true}, {"type": "double",
+    "name": "artist_name_Lil Yachty", "required": true}, {"type": "double", "name":
+    "artist_name_Lykke Li", "required": true}, {"type": "double", "name": "artist_name_Mac
+    Miller", "required": true}, {"type": "double", "name": "artist_name_Maxo Kream",
+    "required": true}, {"type": "double", "name": "artist_name_MellowHigh", "required":
+    true}, {"type": "double", "name": "artist_name_MellowHype", "required": true},
+    {"type": "double", "name": "artist_name_Mike G", "required": true}, {"type": "double",
+    "name": "artist_name_Odd Future", "required": true}, {"type": "double", "name":
+    "artist_name_Pharrell Williams", "required": true}, {"type": "double", "name":
+    "artist_name_Pusha T", "required": true}, {"type": "double", "name": "artist_name_Rex
+    Orange County", "required": true}, {"type": "double", "name": "artist_name_ScHoolboy
+    Q", "required": true}, {"type": "double", "name": "artist_name_Snoh Aalegra",
+    "required": true}, {"type": "double", "name": "artist_name_The Game", "required":
+    true}, {"type": "double", "name": "artist_name_The Internet", "required": true},
+    {"type": "double", "name": "artist_name_The Weeknd", "required": true}, {"type":
+    "double", "name": "artist_name_Trash Talk", "required": true}, {"type": "double",
+    "name": "artist_name_Tyler, The Creator", "required": true}, {"type": "double",
+    "name": "artist_name_Waka Flocka Flame", "required": true}, {"type": "double",
+    "name": "artist_name_Westside Gunn", "required": true}, {"type": "double", "name":
+    "artist_name_Yuna", "required": true}, {"type": "double", "name": "track_name_327
+    (feat. Tyler, The Creator & Billie Essco)", "required": true}, {"type": "double",
+    "name": "track_name_435", "required": true}, {"type": "double", "name": "track_name_48",
+    "required": true}, {"type": "double", "name": "track_name_48 - Instrumental",
+    "required": true}, {"type": "double", "name": "track_name_911 / Mr. Lonely (feat.
+    Frank Ocean & Steve Lacy)", "required": true}, {"type": "double", "name": "track_name_A
+    BOY IS A GUN*", "required": true}, {"type": "double", "name": "track_name_ARE
+    WE STILL FRIENDS?", "required": true}, {"type": "double", "name": "track_name_AU79",
+    "required": true}, {"type": "double", "name": "track_name_After The Storm (feat.
+    Tyler, The Creator & Bootsy Collins)", "required": true}, {"type": "double", "name":
+    "track_name_Analog", "required": true}, {"type": "double", "name": "track_name_Analog
+    2 (feat. Tyler, The Creator, Frank Ocean & Sydney Bennett)", "required": true},
+    {"type": "double", "name": "track_name_Answer", "required": true}, {"type": "double",
+    "name": "track_name_Answer - Instrumental", "required": true}, {"type": "double",
+    "name": "track_name_Automatic Driver - Tyler, The Creator Remix", "required":
+    true}, {"type": "double", "name": "track_name_Awkward", "required": true}, {"type":
+    "double", "name": "track_name_Awkward - Instrumental", "required": true}, {"type":
+    "double", "name": "track_name_B.S.D.", "required": true}, {"type": "double", "name":
+    "track_name_BEST INTEREST", "required": true}, {"type": "double", "name": "track_name_BIG
+    PERSONA (feat. Tyler, The Creator)", "required": true}, {"type": "double", "name":
+    "track_name_BLESSED", "required": true}, {"type": "double", "name": "track_name_BLOW
+    MY LOAD (feat. Wanya Morris, D\u00e2m-Funk, Austin Feinstein & Sydney Bennett)",
+    "required": true}, {"type": "double", "name": "track_name_BLOW MY LOAD - Instrumental",
+    "required": true}, {"type": "double", "name": "track_name_BOYFRIEND, GIRLFRIEND
+    (2020 Demo) (feat. YG)", "required": true}, {"type": "double", "name": "track_name_Big
+    Bag", "required": true}, {"type": "double", "name": "track_name_Biking", "required":
+    true}, {"type": "double", "name": "track_name_Bimmer - Instrumental", "required":
+    true}, {"type": "double", "name": "track_name_BlaccFriday", "required": true},
+    {"type": "double", "name": "track_name_Blossom & Burn (feat. Hodgy & Tyler, The
+    Creator)", "required": true}, {"type": "double", "name": "track_name_Boredom (feat.
+    Rex Orange County & Anna of the North)", "required": true}, {"type": "double",
+    "name": "track_name_Burger", "required": true}, {"type": "double", "name": "track_name_CHERRY
+    BOMB", "required": true}, {"type": "double", "name": "track_name_CHERRY BOMB -
+    Instrumental", "required": true}, {"type": "double", "name": "track_name_CORSO",
+    "required": true}, {"type": "double", "name": "track_name_Campfire - Instrumental",
+    "required": true}, {"type": "double", "name": "track_name_Cash In Cash Out", "required":
+    true}, {"type": "double", "name": "track_name_Castaway", "required": true}, {"type":
+    "double", "name": "track_name_Cindy Lou''s Wish", "required": true}, {"type":
+    "double", "name": "track_name_Colossus", "required": true}, {"type": "double",
+    "name": "track_name_Colossus - Instrumental", "required": true}, {"type": "double",
+    "name": "track_name_Come On, Let''s Go (with Nigo)", "required": true}, {"type":
+    "double", "name": "track_name_Come to Life", "required": true}, {"type": "double",
+    "name": "track_name_Cowboy", "required": true}, {"type": "double", "name": "track_name_Cowboy
+    - Instrumental", "required": true}, {"type": "double", "name": "track_name_Cracc
+    Era", "required": true}, {"type": "double", "name": "track_name_DEATHCAMP (feat.
+    Cole Alexander)", "required": true}, {"type": "double", "name": "track_name_DEATHCAMP
+    - Instrumental", "required": true}, {"type": "double", "name": "track_name_DOGTOOTH",
+    "required": true}, {"type": "double", "name": "track_name_DTA", "required": true},
+    {"type": "double", "name": "track_name_Domo23", "required": true}, {"type": "double",
+    "name": "track_name_Domo23 - Instrumental", "required": true}, {"type": "double",
+    "name": "track_name_Droppin'' Seeds (feat. Lil'' Wayne)", "required": true}, {"type":
+    "double", "name": "track_name_EARFQUAKE", "required": true}, {"type": "double",
+    "name": "track_name_EVERYTHING MUST GO", "required": true}, {"type": "double",
+    "name": "track_name_Enjoy Right Now, Today", "required": true}, {"type": "double",
+    "name": "track_name_F666 the Police", "required": true}, {"type": "double", "name":
+    "track_name_FIND YOUR WINGS (feat. Roy Ayers, Sydney Bennett & Kali Uchis)", "required":
+    true}, {"type": "double", "name": "track_name_FUCKING YOUNG / PERFECT (feat. Charlie
+    Wilson, Chaz Bundick, Sydney Bennett & Kali Uchis)", "required": true}, {"type":
+    "double", "name": "track_name_FUCKING YOUNG / PERFECT - Instrumental", "required":
+    true}, {"type": "double", "name": "track_name_Foreword (feat. Rex Orange County)",
+    "required": true}, {"type": "double", "name": "track_name_GONE, GONE / THANK YOU",
+    "required": true}, {"type": "double", "name": "track_name_GRAVITY (FEAT. TYLER,
+    THE CREATOR)", "required": true}, {"type": "double", "name": "track_name_GROUP
+    B", "required": true}, {"type": "double", "name": "track_name_Garden Shed (feat.
+    Estelle)", "required": true}, {"type": "double", "name": "track_name_Glitter",
+    "required": true}, {"type": "double", "name": "track_name_Go (Gas) (feat. Wiz
+    Khalifa, Juicy J & Tyler, The Creator)", "required": true}, {"type": "double",
+    "name": "track_name_Goblin", "required": true}, {"type": "double", "name": "track_name_Golden",
+    "required": true}, {"type": "double", "name": "track_name_HEAVEN TO ME", "required":
+    true}, {"type": "double", "name": "track_name_HOT WIND BLOWS (feat. Lil Wayne)",
+    "required": true}, {"type": "double", "name": "track_name_Hcapd (feat. Domo Genesis,
+    Hodgy & Tyler, The Creator)", "required": true}, {"type": "double", "name": "track_name_Her",
+    "required": true}, {"type": "double", "name": "track_name_Here We Go\u2026 Again
+    (feat. Tyler, the Creator)", "required": true}, {"type": "double", "name": "track_name_I
+    Ain''t Got Time!", "required": true}, {"type": "double", "name": "track_name_I
+    DON''T LOVE YOU ANYMORE", "required": true}, {"type": "double", "name": "track_name_I
+    Follow Rivers - Tyler, the Creator Remix", "required": true}, {"type": "double",
+    "name": "track_name_I THINK", "required": true}, {"type": "double", "name": "track_name_I''m
+    A Hater (feat. Tyler The Creator & D-Bo)", "required": true}, {"type": "double",
+    "name": "track_name_IFHY (feat. Pharrell)", "required": true}, {"type": "double",
+    "name": "track_name_IGOR''S THEME", "required": true}, {"type": "double", "name":
+    "track_name_IN THE MOMENT feat. Tyler, The Creator", "required": true}, {"type":
+    "double", "name": "track_name_JUGGERNAUT (feat. Lil Uzi Vert & Pharrell Williams)",
+    "required": true}, {"type": "double", "name": "track_name_Jamba (feat. Hodgy)",
+    "required": true}, {"type": "double", "name": "track_name_KEEP DA O''S (feat.
+    Pharrell Williams & Coco O.)", "required": true}, {"type": "double", "name": "track_name_KEEP
+    DA O''S - Instrumental", "required": true}, {"type": "double", "name": "track_name_LEMONHEAD
+    (feat. 42 Dugg)", "required": true}, {"type": "double", "name": "track_name_LUMBERJACK",
+    "required": true}, {"type": "double", "name": "track_name_Legendary", "required":
+    true}, {"type": "double", "name": "track_name_Lights On (feat. Ryan Beatty & Santigold)",
+    "required": true}, {"type": "double", "name": "track_name_Lone", "required": true},
+    {"type": "double", "name": "track_name_Lone - Instrumental", "required": true},
+    {"type": "double", "name": "track_name_Lost and Found Freestyle 2019 (with Tyler,
+    The Creator & Nigo)", "required": true}, {"type": "double", "name": "track_name_MANIFESTO
+    (feat. Domo Genesis)", "required": true}, {"type": "double", "name": "track_name_MASSA",
+    "required": true}, {"type": "double", "name": "track_name_MOMMA TALK", "required":
+    true}, {"type": "double", "name": "track_name_Martians Vs Goblins", "required":
+    true}, {"type": "double", "name": "track_name_NEON PEACH feat. Tyler, The Creator",
+    "required": true}, {"type": "double", "name": "track_name_NEW MAGIC WAND", "required":
+    true}, {"type": "double", "name": "track_name_NOIZE", "required": true}, {"type":
+    "double", "name": "track_name_NY (Ned Flander) (feat. Hodgy & Tyler, The Creator)",
+    "required": true}, {"type": "double", "name": "track_name_Naga", "required": true},
+    {"type": "double", "name": "track_name_Nightmare", "required": true}, {"type":
+    "double", "name": "track_name_No Idols (feat. Tyler, The Creator)", "required":
+    true}, {"type": "double", "name": "track_name_Noid", "required": true}, {"type":
+    "double", "name": "track_name_November", "required": true}, {"type": "double",
+    "name": "track_name_O.K. (Bonus Track)", "required": true}, {"type": "double",
+    "name": "track_name_O.K. (feat. Tyler, The Creator) - Bonus Track", "required":
+    true}, {"type": "double", "name": "track_name_OKAGA, CA (feat. Alice Smith, Leon
+    Ware & Clem Creevy)", "required": true}, {"type": "double", "name": "track_name_OKAGA,
+    CA - Instrumental", "required": true}, {"type": "double", "name": "track_name_OKRA",
+    "required": true}, {"type": "double", "name": "track_name_OPEN A WINDOW (feat.
+    Tyler, The Creator)", "required": true}, {"type": "double", "name": "track_name_Oldie",
+    "required": true}, {"type": "double", "name": "track_name_P (feat. Hodgy & Tyler,
+    The Creator)", "required": true}, {"type": "double", "name": "track_name_PILOT
+    (feat. Sydney Bennett)", "required": true}, {"type": "double", "name": "track_name_PILOT
+    - Instrumental", "required": true}, {"type": "double", "name": "track_name_PNCINTLOFWGKTA
+    (feat. Domo Genesis, Earl Sweatshirt, Hodgy & Tyler, The Creator)", "required":
+    true}, {"type": "double", "name": "track_name_PUPPET", "required": true}, {"type":
+    "double", "name": "track_name_Palace/Curse (feat. Tyler, The Creator & Steve Lacy)",
+    "required": true}, {"type": "double", "name": "track_name_Parking Lot (feat. Casey
+    Veggies & Mike G)", "required": true}, {"type": "double", "name": "track_name_Parking
+    Lot - Instrumental", "required": true}, {"type": "double", "name": "track_name_PartyIsntOver
+    - Instrumental", "required": true}, {"type": "double", "name": "track_name_PartyIsntOver/Campfire/Bimmer
+    (feat. Frank Ocean & Laetitia Sadier)", "required": true}, {"type": "double",
+    "name": "track_name_Pigs", "required": true}, {"type": "double", "name": "track_name_Pigs
+    - Instrumental", "required": true}, {"type": "double", "name": "track_name_Pothole
+    (feat. Jaden Smith)", "required": true}, {"type": "double", "name": "track_name_RIP",
+    "required": true}, {"type": "double", "name": "track_name_RISE! (feat. DAISY WORLD)",
+    "required": true}, {"type": "double", "name": "track_name_RUN (feat. Chaz Bundick
+    & ScHoolboy Q)", "required": true}, {"type": "double", "name": "track_name_RUN
+    - Instrumental", "required": true}, {"type": "double", "name": "track_name_RUNITUP
+    (feat. Teezo Touchdown)", "required": true}, {"type": "double", "name": "track_name_RUNNING
+    OUT OF TIME", "required": true}, {"type": "double", "name": "track_name_Radicals",
+    "required": true}, {"type": "double", "name": "track_name_Rella (feat. Hodgy,
+    Domo Genesis & Tyler, The Creator)", "required": true}, {"type": "double", "name":
+    "track_name_Remix (feat. Tyler, The Creator)", "required": true}, {"type": "double",
+    "name": "track_name_Rolling Papers (feat. Tyler, The Creator)", "required": true},
+    {"type": "double", "name": "track_name_Rusty (feat. Domo Genesis & Earl Sweatshirt)",
+    "required": true}, {"type": "double", "name": "track_name_Rusty - Instrumental",
+    "required": true}, {"type": "double", "name": "track_name_SAFARI", "required":
+    true}, {"type": "double", "name": "track_name_SIR BAUDELAIRE (feat. DJ Drama)",
+    "required": true}, {"type": "double", "name": "track_name_SMUCKERS (feat. Lil
+    Wayne & Kanye West)", "required": true}, {"type": "double", "name": "track_name_SMUCKERS
+    - Instrumental", "required": true}, {"type": "double", "name": "track_name_SORRY
+    NOT SORRY", "required": true}, {"type": "double", "name": "track_name_STUNTMAN
+    (feat. Vince Staples)", "required": true}, {"type": "double", "name": "track_name_SWEET
+    / I THOUGHT YOU WANTED TO DANCE (feat. Brent Faiyaz & Fana Hues)", "required":
+    true}, {"type": "double", "name": "track_name_Sam (Is Dead) (feat. Domo Genesis
+    & Tyler, The Creator)", "required": true}, {"type": "double", "name": "track_name_Sandwitches",
+    "required": true}, {"type": "double", "name": "track_name_Sasquatch (feat. Tyler,
+    The Creator)", "required": true}, {"type": "double", "name": "track_name_See You
+    Again (feat. Kali Uchis)", "required": true}, {"type": "double", "name": "track_name_She",
+    "required": true}, {"type": "double", "name": "track_name_Slater (feat. Frank
+    Ocean)", "required": true}, {"type": "double", "name": "track_name_Slater - Instrumental",
+    "required": true}, {"type": "double", "name": "track_name_Something to Rap About
+    (feat. Tyler, The Creator)", "required": true}, {"type": "double", "name": "track_name_Sometimes...",
+    "required": true}, {"type": "double", "name": "track_name_Steak Sauce", "required":
+    true}, {"type": "double", "name": "track_name_T.D (Lil Yachty & Tierra Whack feat.
+    A$AP Rocky & Tyler, The Creator)", "required": true}, {"type": "double", "name":
+    "track_name_THE BROWN STAINS OF DARKEESE LATIFAH PART 6-12 (REMIX) (feat. ScHoolboy
+    Q)", "required": true}, {"type": "double", "name": "track_name_Tamale", "required":
+    true}, {"type": "double", "name": "track_name_Tamale - Instrumental", "required":
+    true}, {"type": "double", "name": "track_name_Telephone Calls (feat. A$AP Rocky,
+    Tyler, The Creator, Playboi Carti & Yung Gleesh)", "required": true}, {"type":
+    "double", "name": "track_name_Tell Me How (Coca-Cola Commercial)", "required":
+    true}, {"type": "double", "name": "track_name_The Fly who couldn''t Fly straight
+    (feat. Tyler, The Creator)", "required": true}, {"type": "double", "name": "track_name_The
+    Purge", "required": true}, {"type": "double", "name": "track_name_Timeless", "required":
+    true}, {"type": "double", "name": "track_name_Transylvania", "required": true},
+    {"type": "double", "name": "track_name_Trashwang (feat. Na-Kel Smith, Jasper Dolphin,
+    Lucas, L-Boy, Taco, Left Brain & Lee Spielman)", "required": true}, {"type": "double",
+    "name": "track_name_Trashwang - Instrumental", "required": true}, {"type": "double",
+    "name": "track_name_Treehome95 (feat. Coco O. & Erykah Badu)", "required": true},
+    {"type": "double", "name": "track_name_Treehome95 - Instrumental", "required":
+    true}, {"type": "double", "name": "track_name_Tron Cat", "required": true}, {"type":
+    "double", "name": "track_name_Trouble On My Mind", "required": true}, {"type":
+    "double", "name": "track_name_U Say (feat. Tyler, The Creator & Jay Prince)",
+    "required": true}, {"type": "double", "name": "track_name_Untitled 63", "required":
+    true}, {"type": "double", "name": "track_name_VIRGINIA Boy (feat. Tyler, The Creator)
+    - Remix", "required": true}, {"type": "double", "name": "track_name_WHARF TALK
+    (feat. A$AP Rocky)", "required": true}, {"type": "double", "name": "track_name_WHAT
+    A DAY", "required": true}, {"type": "double", "name": "track_name_WHAT''S GOOD",
+    "required": true}, {"type": "double", "name": "track_name_WILSHIRE", "required":
+    true}, {"type": "double", "name": "track_name_WOLF", "required": true}, {"type":
+    "double", "name": "track_name_WUSYANAME (feat. Youngboy Never Broke Again & Ty
+    Dolla $ign)", "required": true}, {"type": "double", "name": "track_name_We Got
+    Bitches (feat. Tyler, The Creator, Taco & Jasper Dolphin)", "required": true},
+    {"type": "double", "name": "track_name_Welcome Home Son (feat. Tyler, The Creator
+    & Casey Veggies)", "required": true}, {"type": "double", "name": "track_name_When
+    Gloves Come Off (feat. Ryan Beatty)", "required": true}, {"type": "double", "name":
+    "track_name_Where This Flower Blooms (feat. Frank Ocean)", "required": true},
+    {"type": "double", "name": "track_name_Who Dat Boy (feat. A$AP Rocky)", "required":
+    true}, {"type": "double", "name": "track_name_Whoa (feat. Tyler, The Creator)",
+    "required": true}, {"type": "double", "name": "track_name_Whoville", "required":
+    true}, {"type": "double", "name": "track_name_Window", "required": true}, {"type":
+    "double", "name": "track_name_Yonkers", "required": true}, {"type": "double",
+    "name": "track_name_fuego (feat. Tyler, The Creator)", "required": true}, {"type":
+    "double", "name": "track_id_0150LSsZrpksYFj3nbynwj", "required": true}, {"type":
+    "double", "name": "track_id_04QTBqa3IA4ZAKEuqRPzEH", "required": true}, {"type":
+    "double", "name": "track_id_06rLDEJNtQf5EUo6ALjSEf", "required": true}, {"type":
+    "double", "name": "track_id_078C2jXg7XsMgW78Gfx1JA", "required": true}, {"type":
+    "double", "name": "track_id_09xpQPfKWdio1wx6v17dGa", "required": true}, {"type":
+    "double", "name": "track_id_0BiK5BbYNFLb88CCOxBFJe", "required": true}, {"type":
+    "double", "name": "track_id_0HsEpiL0kzbiP7w6gehTuG", "required": true}, {"type":
+    "double", "name": "track_id_0JUwpmBTwaXjdMTCnI5eNX", "required": true}, {"type":
+    "double", "name": "track_id_0MfIT9RpAUGHjol2iQzXiq", "required": true}, {"type":
+    "double", "name": "track_id_0NjW4SKY3gbfl2orl1p8hr", "required": true}, {"type":
+    "double", "name": "track_id_0SA0mMXWh23raZ6xzOCU2V", "required": true}, {"type":
+    "double", "name": "track_id_0W4FJRyxu6MKl8kKk3p3sj", "required": true}, {"type":
+    "double", "name": "track_id_0XDfOOlscDrr50Q0PERrVd", "required": true}, {"type":
+    "double", "name": "track_id_0YpaoMOUSP3jwZ4RgqNESG", "required": true}, {"type":
+    "double", "name": "track_id_0d8ONGx43ZprlHlmLZODpD", "required": true}, {"type":
+    "double", "name": "track_id_0dI5myaaNzX0KKcE1I2pNV", "required": true}, {"type":
+    "double", "name": "track_id_0dv0qdbMZ6rJQzWMbxqerR", "required": true}, {"type":
+    "double", "name": "track_id_0et03kdULlRyUoTAPMvhju", "required": true}, {"type":
+    "double", "name": "track_id_0fqkchNanlXCoNacucPP17", "required": true}, {"type":
+    "double", "name": "track_id_0fv2KH6hac06J86hBUTcSf", "required": true}, {"type":
+    "double", "name": "track_id_0gO3E51A3fqp0ypJ26QbVP", "required": true}, {"type":
+    "double", "name": "track_id_0hHDsP3aHpnOq4uvCdiCdC", "required": true}, {"type":
+    "double", "name": "track_id_0lXJL0unztXDdIOXu5xCML", "required": true}, {"type":
+    "double", "name": "track_id_0mvnmLsfi9n5RjPIWzT6tY", "required": true}, {"type":
+    "double", "name": "track_id_0p9grHe7l8mBtKKNtMkqBi", "required": true}, {"type":
+    "double", "name": "track_id_0pR5vcd51X9wyACCiolHNR", "required": true}, {"type":
+    "double", "name": "track_id_0qtK3XwbuG153dmwB8iepL", "required": true}, {"type":
+    "double", "name": "track_id_0txYzTjClJ04QvICXiqjwq", "required": true}, {"type":
+    "double", "name": "track_id_0v3IeMw8l2M3TjIqQrihDW", "required": true}, {"type":
+    "double", "name": "track_id_0wEC0GNF74lAqrEFZJMl1m", "required": true}, {"type":
+    "double", "name": "track_id_0wt8YgYZVAIi8OpVTB7PZ7", "required": true}, {"type":
+    "double", "name": "track_id_10kn8tPNyljdrAGzhaAPSL", "required": true}, {"type":
+    "double", "name": "track_id_13HsOwrwTA5HgLuoaDHncP", "required": true}, {"type":
+    "double", "name": "track_id_14VMRC6EbRfeub5SkIXiad", "required": true}, {"type":
+    "double", "name": "track_id_16PwJffEjvS0WjbaG92ScL", "required": true}, {"type":
+    "double", "name": "track_id_19zPT36WogsfBd8HIaUnt4", "required": true}, {"type":
+    "double", "name": "track_id_1G3YgeTpECl3LYqFsUfzs5", "required": true}, {"type":
+    "double", "name": "track_id_1NhjYYcYTRywc0di98xHxf", "required": true}, {"type":
+    "double", "name": "track_id_1Po3NUwrIkv54e7VIGtQQS", "required": true}, {"type":
+    "double", "name": "track_id_1TDeDFUYHjZKLsO6bzoVg1", "required": true}, {"type":
+    "double", "name": "track_id_1UBLglX9fPtTBZSwJj4yVG", "required": true}, {"type":
+    "double", "name": "track_id_1UIcqXAA24eg76EFWViwr5", "required": true}, {"type":
+    "double", "name": "track_id_1VZS61kwta2pHVTAXU9uU1", "required": true}, {"type":
+    "double", "name": "track_id_1Zcr6QZLrQVCriqBoJdqja", "required": true}, {"type":
+    "double", "name": "track_id_1dXYBALYTj3AMxa8hgiQhA", "required": true}, {"type":
+    "double", "name": "track_id_1ewLDmADNjHl1rzF5Ink3s", "required": true}, {"type":
+    "double", "name": "track_id_1flloiRJOCenDSSjnuHGln", "required": true}, {"type":
+    "double", "name": "track_id_1hIIXXrgAExOVgkMcIipI4", "required": true}, {"type":
+    "double", "name": "track_id_1hz7SRTGUNAtIQ46qiNv2p", "required": true}, {"type":
+    "double", "name": "track_id_1jsMrfbo7gDk0lu0FUISt8", "required": true}, {"type":
+    "double", "name": "track_id_1nXZnTALNXiPlvXotqHm66", "required": true}, {"type":
+    "double", "name": "track_id_1nwkSqzTyXBk6XF796EOav", "required": true}, {"type":
+    "double", "name": "track_id_1oQJ26nHHgHh45WqyA59GF", "required": true}, {"type":
+    "double", "name": "track_id_1otG6j1WHNvl9WgXLWkHTo", "required": true}, {"type":
+    "double", "name": "track_id_1pbbsI2KGPOMu0HmuGccBu", "required": true}, {"type":
+    "double", "name": "track_id_1rW2nkUbmKD2MC22YrU8cX", "required": true}, {"type":
+    "double", "name": "track_id_1sJZgGyZJookIoyLi9jDOV", "required": true}, {"type":
+    "double", "name": "track_id_1tXWUIFKPPHLAth1zCGfmj", "required": true}, {"type":
+    "double", "name": "track_id_1tnZxHryc2wWtjUZC1LQw5", "required": true}, {"type":
+    "double", "name": "track_id_1twZoRIDBZzHaunmzMl2Vp", "required": true}, {"type":
+    "double", "name": "track_id_1v1uyptq1GJOODawkJrwOx", "required": true}, {"type":
+    "double", "name": "track_id_21yRtB6B8EMounImAfHRCP", "required": true}, {"type":
+    "double", "name": "track_id_26jiz9ZZTRxYb0nnuWKyO0", "required": true}, {"type":
+    "double", "name": "track_id_2AVAzChsDazG4eCQuzLYjS", "required": true}, {"type":
+    "double", "name": "track_id_2AoAiGanDanUdBQ4RvwYSX", "required": true}, {"type":
+    "double", "name": "track_id_2CnrJj6Jz4vSe5E1hsWtpg", "required": true}, {"type":
+    "double", "name": "track_id_2HrRwAKgIzjTeuKoaj4akH", "required": true}, {"type":
+    "double", "name": "track_id_2J1ix1qlk9WjgQzV5gSpO7", "required": true}, {"type":
+    "double", "name": "track_id_2JZpS2sOdJy37oBpn1GuPW", "required": true}, {"type":
+    "double", "name": "track_id_2M6P0j9uCqFzx8u9P4VxNi", "required": true}, {"type":
+    "double", "name": "track_id_2OaPyH3JLuft6iuNFHFJl0", "required": true}, {"type":
+    "double", "name": "track_id_2TgzqsJDeNH1BXomOyj94o", "required": true}, {"type":
+    "double", "name": "track_id_2VXhwq2VuhVcLBsJa6A2wY", "required": true}, {"type":
+    "double", "name": "track_id_2WBHjwYSh04TLOwxgtny1O", "required": true}, {"type":
+    "double", "name": "track_id_2X5m6irq8boS50Efx4oWew", "required": true}, {"type":
+    "double", "name": "track_id_2XF5OHqf4GoKW4x8BQjloL", "required": true}, {"type":
+    "double", "name": "track_id_2XXRfOIeQ9oIkSAqgW0kNr", "required": true}, {"type":
+    "double", "name": "track_id_2b3Px7nCuLEWcyndcT3us4", "required": true}, {"type":
+    "double", "name": "track_id_2blrvpb2ueHltASqIVsW0g", "required": true}, {"type":
+    "double", "name": "track_id_2goHCrsDJaflEwQ930ef0o", "required": true}, {"type":
+    "double", "name": "track_id_2hjjUjikOa29kImnI5kQPw", "required": true}, {"type":
+    "double", "name": "track_id_2p37Mfy2PWajgOS3i2aaep", "required": true}, {"type":
+    "double", "name": "track_id_2q0VexHJirnUPnEOhr2DxK", "required": true}, {"type":
+    "double", "name": "track_id_2q35pHabpVH0UPBfDXskvP", "required": true}, {"type":
+    "double", "name": "track_id_2qvONo0PEZvXTS4jZscKwU", "required": true}, {"type":
+    "double", "name": "track_id_2rMuwsqCx6w28IM7NOwnXc", "required": true}, {"type":
+    "double", "name": "track_id_2sFEmuVVAa2klHwhFaT0rR", "required": true}, {"type":
+    "double", "name": "track_id_2svpV0Ja1LtGq6eE7Pysu9", "required": true}, {"type":
+    "double", "name": "track_id_2u1tKPsxhwigi5BNbXihB0", "required": true}, {"type":
+    "double", "name": "track_id_2vLwhcsvRd1f2ETft1kWDN", "required": true}, {"type":
+    "double", "name": "track_id_2vdcmz5DazSCpWma3GQ23l", "required": true}, {"type":
+    "double", "name": "track_id_2wK7y55bzry7tUDmDqYaz7", "required": true}, {"type":
+    "double", "name": "track_id_2wQUUYQ4KOeLLuPS5nBBDK", "required": true}, {"type":
+    "double", "name": "track_id_2xZcwCCcf3tZWXW4yABBkI", "required": true}, {"type":
+    "double", "name": "track_id_2z27xc2eCnIZOBtBHuLQEQ", "required": true}, {"type":
+    "double", "name": "track_id_2ztyTz3H928W2bVb9qXBlB", "required": true}, {"type":
+    "double", "name": "track_id_300DUx4tdtCdGEUXR032jA", "required": true}, {"type":
+    "double", "name": "track_id_31bO3sXBncrrSl5stbzGKN", "required": true}, {"type":
+    "double", "name": "track_id_332Yig3HD2IdDigzlf5Ndl", "required": true}, {"type":
+    "double", "name": "track_id_33i3xxHB4YSYGYbtJrwwO8", "required": true}, {"type":
+    "double", "name": "track_id_35wS3SmZ8gD2ty6x3Wbq3r", "required": true}, {"type":
+    "double", "name": "track_id_39u2PsqrAZpZ0KPx6CjasV", "required": true}, {"type":
+    "double", "name": "track_id_3EG9FJ0ToLfgnc1IG2Z1wz", "required": true}, {"type":
+    "double", "name": "track_id_3ILZNhiwZtZ3fVVI65WC6e", "required": true}, {"type":
+    "double", "name": "track_id_3JJL91ilRV6fXhKqu0FGXs", "required": true}, {"type":
+    "double", "name": "track_id_3NnINnjKVVs03xat0qLQFx", "required": true}, {"type":
+    "double", "name": "track_id_3R1Vu4Ws7UitwDxDHTol0P", "required": true}, {"type":
+    "double", "name": "track_id_3S68RFe1lsdCdTMPIMJM3X", "required": true}, {"type":
+    "double", "name": "track_id_3Z5pXxCb0O6L53vejFHhqQ", "required": true}, {"type":
+    "double", "name": "track_id_3e1eAGw2Icto28DqCqtNSG", "required": true}, {"type":
+    "double", "name": "track_id_3fc6y2t7MsdRXTiyWSjI4s", "required": true}, {"type":
+    "double", "name": "track_id_3jHdKaLCkuNEkWcLVmQPCX", "required": true}, {"type":
+    "double", "name": "track_id_3lqIHMPvL6ef6t2xKD8ZVH", "required": true}, {"type":
+    "double", "name": "track_id_3o3K5bwHFP36MqOLa0WSw3", "required": true}, {"type":
+    "double", "name": "track_id_3qNiRhFYfEbuvWvzQQ5p7d", "required": true}, {"type":
+    "double", "name": "track_id_3u9PAti8muEXXvEjeFpQK0", "required": true}, {"type":
+    "double", "name": "track_id_3v3gyQkwRQGwDUZ7V2q2lF", "required": true}, {"type":
+    "double", "name": "track_id_3v6SdZsS8zR6Go257tldbB", "required": true}, {"type":
+    "double", "name": "track_id_3v7GtykYEMuSg4dQyw4qZb", "required": true}, {"type":
+    "double", "name": "track_id_3wVgi2KoGYTOuzbBFlYiSc", "required": true}, {"type":
+    "double", "name": "track_id_3wtdE36rvmFSsr2Yptn7to", "required": true}, {"type":
+    "double", "name": "track_id_3xFXkeyBtnysOlrQwYan5z", "required": true}, {"type":
+    "double", "name": "track_id_3yxh6Av2dL0rC99Iz2xZps", "required": true}, {"type":
+    "double", "name": "track_id_3zakx7RAwdkUQlOoQ7SJRt", "required": true}, {"type":
+    "double", "name": "track_id_410ZZP746AQeiywhKvXWCo", "required": true}, {"type":
+    "double", "name": "track_id_425mJO91gIMWMwEIDCCs1H", "required": true}, {"type":
+    "double", "name": "track_id_430qNtapCS3Ue1yoSql1oV", "required": true}, {"type":
+    "double", "name": "track_id_46CA1H0T1r7u5lDUtVveAh", "required": true}, {"type":
+    "double", "name": "track_id_46oHvXwpEZOFX518we1nJD", "required": true}, {"type":
+    "double", "name": "track_id_48VvSmLKQv4bKkcjtHlVZS", "required": true}, {"type":
+    "double", "name": "track_id_48dxLly3L9QERpreYM7MKv", "required": true}, {"type":
+    "double", "name": "track_id_49OZTN2N6XxCectfbA9Gf9", "required": true}, {"type":
+    "double", "name": "track_id_4DJ63obgThdFzKRgRrUbkG", "required": true}, {"type":
+    "double", "name": "track_id_4Hta7Oy5W9HD0UgT1P8PPV", "required": true}, {"type":
+    "double", "name": "track_id_4KgTrzmfiWNcVneh2Dd1Ou", "required": true}, {"type":
+    "double", "name": "track_id_4R6U0vcRkTkVW1L0VC3cOm", "required": true}, {"type":
+    "double", "name": "track_id_4SUQbrebZgvSX8i3aYHMB6", "required": true}, {"type":
+    "double", "name": "track_id_4UOeofGICE10ZWlS6UkLNE", "required": true}, {"type":
+    "double", "name": "track_id_4XDpeWqPADoWRKcUY3dC84", "required": true}, {"type":
+    "double", "name": "track_id_4Z1ZlABSKDlVByJL3y5OVs", "required": true}, {"type":
+    "double", "name": "track_id_4bEcoz1OcfMgUbp2ft8ieQ", "required": true}, {"type":
+    "double", "name": "track_id_4cncOEt5C81tmBSHF3kX66", "required": true}, {"type":
+    "double", "name": "track_id_4eVMZcIz4kNgeQNjlKGZbl", "required": true}, {"type":
+    "double", "name": "track_id_4epKryZszRKfshrXTyhmVg", "required": true}, {"type":
+    "double", "name": "track_id_4f8Mh5wuWHOsfXtzjrJB3t", "required": true}, {"type":
+    "double", "name": "track_id_4fi95SJFCEipkjI7IMNF5N", "required": true}, {"type":
+    "double", "name": "track_id_4oQkcfukOHfKsmeoeXQLWC", "required": true}, {"type":
+    "double", "name": "track_id_4rD9WSFNt2LbhVcqZqa5rp", "required": true}, {"type":
+    "double", "name": "track_id_4uKjkPDGkkpOHxw152rM1g", "required": true}, {"type":
+    "double", "name": "track_id_4x9qXC1n1x3v7tg4VD6xep", "required": true}, {"type":
+    "double", "name": "track_id_4ydmav4vl7hebadtfZtMrg", "required": true}, {"type":
+    "double", "name": "track_id_51RN0kzWd7xeR4th5HsEtW", "required": true}, {"type":
+    "double", "name": "track_id_53GpcuUGjcYVSVQVBg4Tys", "required": true}, {"type":
+    "double", "name": "track_id_53Ij8FmAuvzXLsjzCTLM31", "required": true}, {"type":
+    "double", "name": "track_id_53dkS3h9uTNsWYZTPacnpx", "required": true}, {"type":
+    "double", "name": "track_id_54f4m5Pg5HEzsZQiaz2Dxp", "required": true}, {"type":
+    "double", "name": "track_id_555VfdiQswEDceHER92qAK", "required": true}, {"type":
+    "double", "name": "track_id_586xfl7VsCFPD9z5iJoKEp", "required": true}, {"type":
+    "double", "name": "track_id_59S3SiDxj914oyXd25zt3j", "required": true}, {"type":
+    "double", "name": "track_id_5A0M6B0RBSXSNWv0wcppZ9", "required": true}, {"type":
+    "double", "name": "track_id_5AkCXzN890Crr33zlOJACl", "required": true}, {"type":
+    "double", "name": "track_id_5AnVuHLmgipXkFmBvj2Q6H", "required": true}, {"type":
+    "double", "name": "track_id_5B0kgjHULYJhAQkK5XsMoC", "required": true}, {"type":
+    "double", "name": "track_id_5BikEzeYYFtRvR1CL1UTRg", "required": true}, {"type":
+    "double", "name": "track_id_5DXJ7agkkKytxX8Z2x1fY3", "required": true}, {"type":
+    "double", "name": "track_id_5GYJvoJUMVyikb2D5sUwVg", "required": true}, {"type":
+    "double", "name": "track_id_5Jue6vup8nHUgXFUGMk478", "required": true}, {"type":
+    "double", "name": "track_id_5L4n81Ecf8UE837uJkuoJJ", "required": true}, {"type":
+    "double", "name": "track_id_5LJD1sBRPnDkhWs2D5qRk2", "required": true}, {"type":
+    "double", "name": "track_id_5OkYfk72CNL8XLqa3gp9q7", "required": true}, {"type":
+    "double", "name": "track_id_5PF2WtSZV4EtmGx4oER1zt", "required": true}, {"type":
+    "double", "name": "track_id_5QVzpGhv1GGMeKOUvtzO0A", "required": true}, {"type":
+    "double", "name": "track_id_5QvBXUm5MglLJ3iBfTX2Wo", "required": true}, {"type":
+    "double", "name": "track_id_5RZZNUcJc9DthLneJjcqyW", "required": true}, {"type":
+    "double", "name": "track_id_5Sp0Qp4cmT5XXeJXfnrDAm", "required": true}, {"type":
+    "double", "name": "track_id_5SxlUF7J8tyFIEF22EomeP", "required": true}, {"type":
+    "double", "name": "track_id_5TxRUOsGeWeRl3xOML59Ai", "required": true}, {"type":
+    "double", "name": "track_id_5VnpYqIzm02X9gOhVElQo3", "required": true}, {"type":
+    "double", "name": "track_id_5WNYg3usc6H8N3MBEp4zVk", "required": true}, {"type":
+    "double", "name": "track_id_5Zxag6MRK1YCumP1XP3lZg", "required": true}, {"type":
+    "double", "name": "track_id_5a2vYvmIWmtA8KcUTthpRk", "required": true}, {"type":
+    "double", "name": "track_id_5fbHRCsGpFIOLRtlhCRFDR", "required": true}, {"type":
+    "double", "name": "track_id_5hVghJ4KaYES3BFUATCYn0", "required": true}, {"type":
+    "double", "name": "track_id_5jEZhuoyYx0voV0DJuPVJL", "required": true}, {"type":
+    "double", "name": "track_id_5pFSH7k21DTVSNMRsZum5C", "required": true}, {"type":
+    "double", "name": "track_id_5sxRbu2Oi9lgmLO8taA3Rf", "required": true}, {"type":
+    "double", "name": "track_id_5wTpnBRTx1HSGQVDZQ2VSh", "required": true}, {"type":
+    "double", "name": "track_id_5x8NgG7Ya18m9wafOvvWYk", "required": true}, {"type":
+    "double", "name": "track_id_5xJeZ6tLPOXNIrrphEIuay", "required": true}, {"type":
+    "double", "name": "track_id_5zjMSaWC8t8XEedXBAiFUr", "required": true}, {"type":
+    "double", "name": "track_id_60b6B2ULC85t4Y5IjZvP7A", "required": true}, {"type":
+    "double", "name": "track_id_64v1g2HcPumBz2Wd1rT56b", "required": true}, {"type":
+    "double", "name": "track_id_65Cev4uzaAUqfqu0oxepew", "required": true}, {"type":
+    "double", "name": "track_id_66cdtHTWQgMNwkd0lyJzQf", "required": true}, {"type":
+    "double", "name": "track_id_6738dceRZVHz8VumfBH7aI", "required": true}, {"type":
+    "double", "name": "track_id_67nRofeeMvysUeO4FxB6tL", "required": true}, {"type":
+    "double", "name": "track_id_6ACiYjq5Q7e6BlhZEHz7cd", "required": true}, {"type":
+    "double", "name": "track_id_6FwiflJB4b1v8j3h10e9ZM", "required": true}, {"type":
+    "double", "name": "track_id_6KuXb26rHuRy3ZDse1VRmx", "required": true}, {"type":
+    "double", "name": "track_id_6OfOzTitafSnsaunQLuNFw", "required": true}, {"type":
+    "double", "name": "track_id_6S4WM9LW6oGkAtBFePffh2", "required": true}, {"type":
+    "double", "name": "track_id_6SfqAuzvIHbERSO5c613P0", "required": true}, {"type":
+    "double", "name": "track_id_6UJ0uSZsAsT2sm4929OVEJ", "required": true}, {"type":
+    "double", "name": "track_id_6UYbt0ZVXP5pnrhzk8z2d8", "required": true}, {"type":
+    "double", "name": "track_id_6W6ZtovTUzjVGw0EmxfKt2", "required": true}, {"type":
+    "double", "name": "track_id_6X4p4GdoksbRDVz4Q5wTj5", "required": true}, {"type":
+    "double", "name": "track_id_6XOlxdDpGxcxaSD834sTwJ", "required": true}, {"type":
+    "double", "name": "track_id_6XOvMjNjLdTsolZGAy5w4s", "required": true}, {"type":
+    "double", "name": "track_id_6XbRv7v36koV366CtDzGhU", "required": true}, {"type":
+    "double", "name": "track_id_6ZvghXQAXw2W9blIQbBVZW", "required": true}, {"type":
+    "double", "name": "track_id_6bCbBTw3mqHWQwhFMMaOOq", "required": true}, {"type":
+    "double", "name": "track_id_6bOkaEXc5CopinGazSLokx", "required": true}, {"type":
+    "double", "name": "track_id_6c7l5gpEyCNGr86jsWneGy", "required": true}, {"type":
+    "double", "name": "track_id_6cFamI2vPztQoopGMnjD64", "required": true}, {"type":
+    "double", "name": "track_id_6cm6JrItYA13xIiSSianOy", "required": true}, {"type":
+    "double", "name": "track_id_6cptY7FTu1MccbY9PACAtj", "required": true}, {"type":
+    "double", "name": "track_id_6ex85awyyNSg99oF6KEcVT", "required": true}, {"type":
+    "double", "name": "track_id_6f44p3Kc4ayD9VtbC9Clkr", "required": true}, {"type":
+    "double", "name": "track_id_6gUn2o1rBATdPY58wpTutF", "required": true}, {"type":
+    "double", "name": "track_id_6kz3FLaVhtcUECyMYR9BCR", "required": true}, {"type":
+    "double", "name": "track_id_6oVFpdtDzSgRLv8rUgFVUW", "required": true}, {"type":
+    "double", "name": "track_id_6rqj2zeKhLy3exkuFi6mSz", "required": true}, {"type":
+    "double", "name": "track_id_6u3CPnFMKANYgfdiifFOiJ", "required": true}, {"type":
+    "double", "name": "track_id_72OgjLqn9qG0A9XkfGwGrt", "required": true}, {"type":
+    "double", "name": "track_id_74ZovzRxHBvCq5yIwe8boh", "required": true}, {"type":
+    "double", "name": "track_id_75kiQfmmuQwgquZ9RLSvuA", "required": true}, {"type":
+    "double", "name": "track_id_7A5zSSX7AAVRhcTmIaKcf6", "required": true}, {"type":
+    "double", "name": "track_id_7E3FdWpPkWTCggsanYXj30", "required": true}, {"type":
+    "double", "name": "track_id_7GJYd0MLHdnVLQ3G1AqNZK", "required": true}, {"type":
+    "double", "name": "track_id_7Il5uRy0f42P1hXMIfa6iG", "required": true}, {"type":
+    "double", "name": "track_id_7KA4W4McWYRpgf0fWsJZWB", "required": true}, {"type":
+    "double", "name": "track_id_7MT9QdnGDvZ9jvDTElR75v", "required": true}, {"type":
+    "double", "name": "track_id_7c3pv0dJXJHvSeyT1ucQjJ", "required": true}, {"type":
+    "double", "name": "track_id_7czHy27LqBUF6zifjvBPEn", "required": true}, {"type":
+    "double", "name": "track_id_7er0EUMY653mxZ1NVD9mwQ", "required": true}, {"type":
+    "double", "name": "track_id_7fnH9vpllrPLuIgLQ2x7ji", "required": true}, {"type":
+    "double", "name": "track_id_7i6RKww9Z0sdTbEHFI95WT", "required": true}, {"type":
+    "double", "name": "track_id_7kWOOLjhvTsfNFHdu9iWWl", "required": true}, {"type":
+    "double", "name": "track_id_7mlvrrNPu1Kgb2GBOJnQFC", "required": true}, {"type":
+    "double", "name": "track_id_7nfjw4GlYu6kGVkf19yzFe", "required": true}, {"type":
+    "double", "name": "track_id_7wzKTBFNEsWLzu6mYSnGJf", "required": true}, {"type":
+    "double", "name": "track_id_7z4xW9WY86uH3gd1V9pfCM", "required": true}, {"type":
+    "double", "name": "track_id_7zdanauvITJaq9OE7bBz0c", "required": true}, {"type":
+    "double", "name": "track_id_7zs03air8yiI8EYfAaX7b1", "required": true}, {"type":
+    "double", "name": "album_name_12 Odd Future Songs", "required": true}, {"type":
+    "double", "name": "album_name_435", "required": true}, {"type": "double", "name":
+    "album_name_Alfredo", "required": true}, {"type": "double", "name": "album_name_Ali",
+    "required": true}, {"type": "double", "name": "album_name_Automatic Driver (Tyler,
+    The Creator Remix)", "required": true}, {"type": "double", "name": "album_name_BEST
+    INTEREST", "required": true}, {"type": "double", "name": "album_name_BIG PERSONA
+    (feat. Tyler, The Creator)", "required": true}, {"type": "double", "name": "album_name_Biking",
+    "required": true}, {"type": "double", "name": "album_name_Blackenedwhite", "required":
+    true}, {"type": "double", "name": "album_name_CALL ME IF YOU GET LOST", "required":
+    true}, {"type": "double", "name": "album_name_CALL ME IF YOU GET LOST: The Estate
+    Sale", "required": true}, {"type": "double", "name": "album_name_Cash In Cash
+    Out", "required": true}, {"type": "double", "name": "album_name_Cherry Bomb",
+    "required": true}, {"type": "double", "name": "album_name_Cherry Bomb + Instrumentals",
+    "required": true}, {"type": "double", "name": "album_name_Cozy Tapes: Vol. 1 Friends
+    -", "required": true}, {"type": "double", "name": "album_name_Cracc Era", "required":
+    true}, {"type": "double", "name": "album_name_Customized Greatly Vol. 3", "required":
+    true}, {"type": "double", "name": "album_name_Dawn FM", "required": true}, {"type":
+    "double", "name": "album_name_Diaspora", "required": true}, {"type": "double",
+    "name": "album_name_Domo23", "required": true}, {"type": "double", "name": "album_name_Donda
+    (Deluxe)", "required": true}, {"type": "double", "name": "album_name_Doris", "required":
+    true}, {"type": "double", "name": "album_name_ERYS (Deluxe)", "required": true},
+    {"type": "double", "name": "album_name_Ego Death", "required": true}, {"type":
+    "double", "name": "album_name_Fear Of God II: Let Us Pray", "required": true},
+    {"type": "double", "name": "album_name_Flower Boy", "required": true}, {"type":
+    "double", "name": "album_name_GROUP B", "required": true}, {"type": "double",
+    "name": "album_name_Genesis", "required": true}, {"type": "double", "name": "album_name_Goblin",
+    "required": true}, {"type": "double", "name": "album_name_Gravity (feat. Tyler,
+    The Creator)", "required": true}, {"type": "double", "name": "album_name_Hitler
+    Wears Hermes 8: Side B", "required": true}, {"type": "double", "name": "album_name_I
+    Hate My Life and I Really Wish People Would Stop Telling Me Not To", "required":
+    true}, {"type": "double", "name": "album_name_I Know NIGO!", "required": true},
+    {"type": "double", "name": "album_name_I''M REALLY LIKE THAT", "required": true},
+    {"type": "double", "name": "album_name_IGOR", "required": true}, {"type": "double",
+    "name": "album_name_Isolation", "required": true}, {"type": "double", "name":
+    "album_name_LUMBERJACK", "required": true}, {"type": "double", "name": "album_name_Lil
+    Boat 3", "required": true}, {"type": "double", "name": "album_name_Live & Grow",
+    "required": true}, {"type": "double", "name": "album_name_MellowHigh", "required":
+    true}, {"type": "double", "name": "album_name_Music Inspired by Illumination &
+    Dr. Seuss'' The Grinch", "required": true}, {"type": "double", "name": "album_name_No
+    Idols", "required": true}, {"type": "double", "name": "album_name_Noid", "required":
+    true}, {"type": "double", "name": "album_name_OKRA", "required": true}, {"type":
+    "double", "name": "album_name_OPEN A WINDOW (feat. Tyler, The Creator)", "required":
+    true}, {"type": "double", "name": "album_name_Oxymoron (Deluxe)", "required":
+    true}, {"type": "double", "name": "album_name_Piece By Piece - Music from the
+    Motion Picture", "required": true}, {"type": "double", "name": "album_name_Pray
+    for Paris", "required": true}, {"type": "double", "name": "album_name_Rouge",
+    "required": true}, {"type": "double", "name": "album_name_Salute Me Or Shoot Me
+    4 (Banned From America)", "required": true}, {"type": "double", "name": "album_name_Sleeping
+    in Class", "required": true}, {"type": "double", "name": "album_name_TEMPORARY
+    HIGHS IN THE VIOLET SKIES", "required": true}, {"type": "double", "name": "album_name_Tell
+    Me How (Coca-Cola Commercial)", "required": true}, {"type": "double", "name":
+    "album_name_The OF Tape Vol. 2", "required": true}, {"type": "double", "name":
+    "album_name_The R.E.D. Album", "required": true}, {"type": "double", "name": "album_name_WASTELAND",
+    "required": true}, {"type": "double", "name": "album_name_WHO CARES?", "required":
+    true}, {"type": "double", "name": "album_name_Watching Movies with the Sound Off
+    (10th Anniversary)", "required": true}, {"type": "double", "name": "album_name_Watching
+    Movies with the Sound Off (Deluxe Edition)", "required": true}, {"type": "double",
+    "name": "album_name_Wolf", "required": true}, {"type": "double", "name": "album_name_Wolf
+    + Instrumentals", "required": true}, {"type": "double", "name": "album_name_Wounded
+    Rhymes (Anniversary Edition)", "required": true}, {"type": "double", "name": "album_name_Yonkers",
+    "required": true}, {"type": "double", "name": "album_name_i can''t go outside",
+    "required": true}, {"type": "double", "name": "album_id_0KtFP56RU7bd32pcvdeWOU",
+    "required": true}, {"type": "double", "name": "album_id_0PHMNbcgHfzSUALlfk7wGg",
+    "required": true}, {"type": "double", "name": "album_id_0Wf65emw9eAwbjJ45gMMqp",
+    "required": true}, {"type": "double", "name": "album_id_0dXN05tQ4StX1W0lwN95Q6",
+    "required": true}, {"type": "double", "name": "album_id_0s6x43akIIRH0fTOFxT7xq",
+    "required": true}, {"type": "double", "name": "album_id_0tS7jye0zKwGF0H4rqFGvz",
+    "required": true}, {"type": "double", "name": "album_id_0vTDlHYc2iOl6Vwyi0Ld9p",
+    "required": true}, {"type": "double", "name": "album_id_19ms2xSmphDqfhx2dp11Tl",
+    "required": true}, {"type": "double", "name": "album_id_1GG6U2SSJPHO6XsFiBzxYv",
+    "required": true}, {"type": "double", "name": "album_id_1p2LdU7Q9Aq8OjO8sfnVMU",
+    "required": true}, {"type": "double", "name": "album_id_210rAUA5H4xH6S9J0aHRLE",
+    "required": true}, {"type": "double", "name": "album_id_2CYr9450iYkEWq4IWL8plY",
+    "required": true}, {"type": "double", "name": "album_id_2EL4Tqtj9eXAjxcKPDIyu1",
+    "required": true}, {"type": "double", "name": "album_id_2Wiyo7LzdeBCsVZiRA6vVZ",
+    "required": true}, {"type": "double", "name": "album_id_2nLOHgzXzwFEpl62zAgCEC",
+    "required": true}, {"type": "double", "name": "album_id_2nkto6YNI4rUYTLqEwWJ3o",
+    "required": true}, {"type": "double", "name": "album_id_2yI4m5Yu2tl8v0It5P9WVz",
+    "required": true}, {"type": "double", "name": "album_id_3GncI0ExXYyWnIzZe9oxRQ",
+    "required": true}, {"type": "double", "name": "album_id_3RaACfwYTY9uiDy3VSWLLc",
+    "required": true}, {"type": "double", "name": "album_id_3T02fCxAjApu18taJLLbyN",
+    "required": true}, {"type": "double", "name": "album_id_3mhZHDmHvIUAeAYH7MrXBW",
+    "required": true}, {"type": "double", "name": "album_id_3q81wYkuErRE4zeihVDeGu",
+    "required": true}, {"type": "double", "name": "album_id_3scNeGKz8kAMDrYG5U971b",
+    "required": true}, {"type": "double", "name": "album_id_3znl1qe13kyjQv7KcR685N",
+    "required": true}, {"type": "double", "name": "album_id_40QTqOBBxCEIQlLNdSjFQB",
+    "required": true}, {"type": "double", "name": "album_id_45ba6QAtNrdv6Ke4MFOKk9",
+    "required": true}, {"type": "double", "name": "album_id_48jLx1BQeDpojpNweMzlMf",
+    "required": true}, {"type": "double", "name": "album_id_4EPQtdq6vvwxuYeQTrwDVY",
+    "required": true}, {"type": "double", "name": "album_id_4FUZ2K8iROpZzhWjusmH9e",
+    "required": true}, {"type": "double", "name": "album_id_4KUXmY53T1DLMZ0lVJsjjw",
+    "required": true}, {"type": "double", "name": "album_id_4OjzAZXWalqQN5STXHPJdl",
+    "required": true}, {"type": "double", "name": "album_id_4YV8SurDnk8sctOOZzYtbH",
+    "required": true}, {"type": "double", "name": "album_id_4YsS6HUCoyntWFTReZD1GU",
+    "required": true}, {"type": "double", "name": "album_id_4azVkVe6yeIBhFVyECag4j",
+    "required": true}, {"type": "double", "name": "album_id_4dcg79r3qkQVz7vrjeLS8u",
+    "required": true}, {"type": "double", "name": "album_id_4jEKedq9rWPV9OXuMkrZCa",
+    "required": true}, {"type": "double", "name": "album_id_4n7vzMjIJLuU4yMSFaoQ9h",
+    "required": true}, {"type": "double", "name": "album_id_4yQasTblx6sk72EF14Du8g",
+    "required": true}, {"type": "double", "name": "album_id_57PHygGtLqa9kJRE3rUy15",
+    "required": true}, {"type": "double", "name": "album_id_57ttk3xzHMWLr6CGrEa8F3",
+    "required": true}, {"type": "double", "name": "album_id_5By9BZR5hxGhbkeq7sAcqZ",
+    "required": true}, {"type": "double", "name": "album_id_5V3Chnpno9oTI7JSPXKUf3",
+    "required": true}, {"type": "double", "name": "album_id_5VQnHe5Wcji6wNbiAnMQ21",
+    "required": true}, {"type": "double", "name": "album_id_5Xl1nussmpooifiSxmxUXC",
+    "required": true}, {"type": "double", "name": "album_id_5cVudF06zoMgAbXIRkk6aR",
+    "required": true}, {"type": "double", "name": "album_id_5dbCm8qaCdWnNdVyi3urUO",
+    "required": true}, {"type": "double", "name": "album_id_5iUwaD3wFVwfaAfs9Z0eCh",
+    "required": true}, {"type": "double", "name": "album_id_5ufhf4tUkvX78Y8nJgXlqw",
+    "required": true}, {"type": "double", "name": "album_id_5vRfIDOPJHy3W2wHWbzLlE",
+    "required": true}, {"type": "double", "name": "album_id_5wWkfNvfwMfQFbas9Gjggq",
+    "required": true}, {"type": "double", "name": "album_id_5zi7WsKlIiUXv09tbGLKsE",
+    "required": true}, {"type": "double", "name": "album_id_621OhgnZJ7Pz8iUazct1In",
+    "required": true}, {"type": "double", "name": "album_id_69g3CtOVg98TPOwqmI2K7Q",
+    "required": true}, {"type": "double", "name": "album_id_6PvZnd9Q2ymDo3gpoM5I37",
+    "required": true}, {"type": "double", "name": "album_id_6cKBoHXh7dKn2gVsGniZ58",
+    "required": true}, {"type": "double", "name": "album_id_6dbTZGSD48VL8dDBy41yeb",
+    "required": true}, {"type": "double", "name": "album_id_6hFTxaqHvUadGLRV9xDEjV",
+    "required": true}, {"type": "double", "name": "album_id_6nfJMRoIjyRwk3ZTHNm0PY",
+    "required": true}, {"type": "double", "name": "album_id_6ymw9w3tGhxVGBskQAhsvm",
+    "required": true}, {"type": "double", "name": "album_id_75T8WnF5n7fgKJ0EC7WRPS",
+    "required": true}, {"type": "double", "name": "album_id_790qROmQ1y4aPEYLcSkScH",
+    "required": true}, {"type": "double", "name": "album_id_7Et3bSTLLqdABO1qCxUplS",
+    "required": true}, {"type": "double", "name": "album_id_7KLG5Qk1Y9gLzSjdNdR96l",
+    "required": true}, {"type": "double", "name": "album_id_7ibEo7IK9E9mi2sU5rJNDC",
+    "required": true}, {"type": "double", "name": "album_id_7yOOPJjNelITCaYMqk8V6r",
+    "required": true}, {"type": "double", "name": "release_date_2011-01-01", "required":
+    true}, {"type": "double", "name": "release_date_2011-02-15", "required": true},
+    {"type": "double", "name": "release_date_2011-05-09", "required": true}, {"type":
+    "double", "name": "release_date_2011-07-12", "required": true}, {"type": "double",
+    "name": "release_date_2011-09-20", "required": true}, {"type": "double", "name":
+    "release_date_2011-10-03", "required": true}, {"type": "double", "name": "release_date_2011-11-08",
+    "required": true}, {"type": "double", "name": "release_date_2012-03-16", "required":
+    true}, {"type": "double", "name": "release_date_2012-04-09", "required": true},
+    {"type": "double", "name": "release_date_2012-10-09", "required": true}, {"type":
+    "double", "name": "release_date_2013-02-15", "required": true}, {"type": "double",
+    "name": "release_date_2013-04-01", "required": true}, {"type": "double", "name":
+    "release_date_2013-06-18", "required": true}, {"type": "double", "name": "release_date_2013-08-16",
+    "required": true}, {"type": "double", "name": "release_date_2013-10-31", "required":
+    true}, {"type": "double", "name": "release_date_2014-01-01", "required": true},
+    {"type": "double", "name": "release_date_2015-04-13", "required": true}, {"type":
+    "double", "name": "release_date_2015-06-26", "required": true}, {"type": "double",
+    "name": "release_date_2015-09-25", "required": true}, {"type": "double", "name":
+    "release_date_2016-03-25", "required": true}, {"type": "double", "name": "release_date_2016-10-31",
+    "required": true}, {"type": "double", "name": "release_date_2017-04-10", "required":
+    true}, {"type": "double", "name": "release_date_2017-07-21", "required": true},
+    {"type": "double", "name": "release_date_2018-01-19", "required": true}, {"type":
+    "double", "name": "release_date_2018-03-30", "required": true}, {"type": "double",
+    "name": "release_date_2018-04-06", "required": true}, {"type": "double", "name":
+    "release_date_2018-06-08", "required": true}, {"type": "double", "name": "release_date_2018-11-16",
+    "required": true}, {"type": "double", "name": "release_date_2018-12-11", "required":
+    true}, {"type": "double", "name": "release_date_2019-05-17", "required": true},
+    {"type": "double", "name": "release_date_2019-06-12", "required": true}, {"type":
+    "double", "name": "release_date_2019-07-05", "required": true}, {"type": "double",
+    "name": "release_date_2019-07-12", "required": true}, {"type": "double", "name":
+    "release_date_2020-01-25", "required": true}, {"type": "double", "name": "release_date_2020-04-17",
+    "required": true}, {"type": "double", "name": "release_date_2020-05-29", "required":
+    true}, {"type": "double", "name": "release_date_2020-12-10", "required": true},
+    {"type": "double", "name": "release_date_2021-01-29", "required": true}, {"type":
+    "double", "name": "release_date_2021-03-05", "required": true}, {"type": "double",
+    "name": "release_date_2021-06-16", "required": true}, {"type": "double", "name":
+    "release_date_2021-06-25", "required": true}, {"type": "double", "name": "release_date_2021-07-09",
+    "required": true}, {"type": "double", "name": "release_date_2021-07-16", "required":
+    true}, {"type": "double", "name": "release_date_2021-09-07", "required": true},
+    {"type": "double", "name": "release_date_2021-09-24", "required": true}, {"type":
+    "double", "name": "release_date_2021-11-14", "required": true}, {"type": "double",
+    "name": "release_date_2022-01-06", "required": true}, {"type": "double", "name":
+    "release_date_2022-03-09", "required": true}, {"type": "double", "name": "release_date_2022-03-11",
+    "required": true}, {"type": "double", "name": "release_date_2022-03-25", "required":
+    true}, {"type": "double", "name": "release_date_2022-06-10", "required": true},
+    {"type": "double", "name": "release_date_2022-07-08", "required": true}, {"type":
+    "double", "name": "release_date_2023-03-31", "required": true}, {"type": "double",
+    "name": "release_date_2023-04-20", "required": true}, {"type": "double", "name":
+    "release_date_2023-06-23", "required": true}, {"type": "double", "name": "release_date_2024-09-25",
+    "required": true}, {"type": "double", "name": "release_date_2024-10-11", "required":
+    true}, {"type": "double", "name": "release_date_2024-10-21", "required": true},
+    {"type": "double", "name": "explicit_True", "required": true}, {"type": "double",
+    "name": "key_A#/Bb", "required": true}, {"type": "double", "name": "key_B", "required":
+    true}, {"type": "double", "name": "key_C", "required": true}, {"type": "double",
+    "name": "key_C#/Db", "required": true}, {"type": "double", "name": "key_D", "required":
+    true}, {"type": "double", "name": "key_D#/Eb", "required": true}, {"type": "double",
+    "name": "key_E", "required": true}, {"type": "double", "name": "key_F", "required":
+    true}, {"type": "double", "name": "key_F#/Gb", "required": true}, {"type": "double",
+    "name": "key_G", "required": true}, {"type": "double", "name": "key_G#/Ab", "required":
+    true}, {"type": "double", "name": "mode_Minor", "required": true}, {"type": "double",
+    "name": "featured_artists_42 Dugg", "required": true}, {"type": "double", "name":
+    "featured_artists_A$AP Rocky", "required": true}, {"type": "double", "name": "featured_artists_A$AP
+    Rocky, Tyler, The Creator, Playboi Carti, Yung Gleesh", "required": true}, {"type":
+    "double", "name": "featured_artists_Alice Smith, Leon Ware, Clem Creevy", "required":
+    true}, {"type": "double", "name": "featured_artists_Brent Faiyaz, Fana Hues",
+    "required": true}, {"type": "double", "name": "featured_artists_Casey Veggies,
+    Mike G", "required": true}, {"type": "double", "name": "featured_artists_Charlie
+    Wilson, Chaz Bundick, Syd, Kali Uchis", "required": true}, {"type": "double",
+    "name": "featured_artists_Chaz Bundick, ScHoolboy Q", "required": true}, {"type":
+    "double", "name": "featured_artists_Coco O., Erykah Badu", "required": true},
+    {"type": "double", "name": "featured_artists_Cole Alexander", "required": true},
+    {"type": "double", "name": "featured_artists_D-Bo, Tyler, The Creator", "required":
+    true}, {"type": "double", "name": "featured_artists_DAISY WORLD", "required":
+    true}, {"type": "double", "name": "featured_artists_DJ Drama", "required": true},
+    {"type": "double", "name": "featured_artists_Dahi, Tyler, The Creator", "required":
+    true}, {"type": "double", "name": "featured_artists_Domo Genesis", "required":
+    true}, {"type": "double", "name": "featured_artists_Domo Genesis, Earl Sweatshirt",
+    "required": true}, {"type": "double", "name": "featured_artists_Domo Genesis,
+    Earl Sweatshirt, Hodgy, Tyler, The Creator", "required": true}, {"type": "double",
+    "name": "featured_artists_Domo Genesis, Frank Ocean, Hodgy, Mike G", "required":
+    true}, {"type": "double", "name": "featured_artists_Domo Genesis, Hodgy, Tyler,
+    The Creator", "required": true}, {"type": "double", "name": "featured_artists_Domo
+    Genesis, Tyler, The Creator", "required": true}, {"type": "double", "name": "featured_artists_Estelle",
+    "required": true}, {"type": "double", "name": "featured_artists_Frank Ocean",
+    "required": true}, {"type": "double", "name": "featured_artists_Frank Ocean, Laetitia
+    Sadier", "required": true}, {"type": "double", "name": "featured_artists_Frank
+    Ocean, Steve Lacy", "required": true}, {"type": "double", "name": "featured_artists_Hodgy",
+    "required": true}, {"type": "double", "name": "featured_artists_Hodgy, Domo Genesis,
+    Tyler, The Creator", "required": true}, {"type": "double", "name": "featured_artists_Hodgy,
+    Tyler, The Creator", "required": true}, {"type": "double", "name": "featured_artists_JAY-Z,
+    Tyler, The Creator", "required": true}, {"type": "double", "name": "featured_artists_Jaden",
+    "required": true}, {"type": "double", "name": "featured_artists_Jasper Dolphin,
+    Taco", "required": true}, {"type": "double", "name": "featured_artists_Joey Bada$$,
+    Tyler, The Creator, Billie Essco", "required": true}, {"type": "double", "name":
+    "featured_artists_Kali Uchis", "required": true}, {"type": "double", "name": "featured_artists_Lil
+    Uzi Vert, Pharrell Williams", "required": true}, {"type": "double", "name": "featured_artists_Lil
+    Wayne", "required": true}, {"type": "double", "name": "featured_artists_Lil Wayne,
+    Kanye West", "required": true}, {"type": "double", "name": "featured_artists_Lil
+    Wayne, Tyler, The Creator", "required": true}, {"type": "double", "name": "featured_artists_Na-Kel
+    Smith, Jasper Dolphin, Lucas., L-Boy, Taco, Left Brain, Lee Spielman", "required":
+    true}, {"type": "double", "name": "featured_artists_Nigo", "required": true},
+    {"type": "double", "name": "featured_artists_Pharrell Williams", "required": true},
+    {"type": "double", "name": "featured_artists_Pharrell Williams, Coco O.", "required":
+    true}, {"type": "double", "name": "featured_artists_Rex Orange County", "required":
+    true}, {"type": "double", "name": "featured_artists_Rex Orange County, Anna of
+    the North", "required": true}, {"type": "double", "name": "featured_artists_Roy
+    Ayers, Syd, Kali Uchis", "required": true}, {"type": "double", "name": "featured_artists_Ryan
+    Beatty", "required": true}, {"type": "double", "name": "featured_artists_Ryan
+    Beatty, Santigold", "required": true}, {"type": "double", "name": "featured_artists_ScHoolboy
+    Q", "required": true}, {"type": "double", "name": "featured_artists_Syd", "required":
+    true}, {"type": "double", "name": "featured_artists_Teezo Touchdown", "required":
+    true}, {"type": "double", "name": "featured_artists_The Alchemist, Tyler, The
+    Creator", "required": true}, {"type": "double", "name": "featured_artists_Tierra
+    Whack, A$AP Rocky, Tyler, The Creator", "required": true}, {"type": "double",
+    "name": "featured_artists_Tyler, The Creator", "required": true}, {"type": "double",
+    "name": "featured_artists_Tyler, The Creator, Bootsy Collins", "required": true},
+    {"type": "double", "name": "featured_artists_Tyler, The Creator, Casey Veggies",
+    "required": true}, {"type": "double", "name": "featured_artists_Tyler, The Creator,
+    Frank Ocean, Syd", "required": true}, {"type": "double", "name": "featured_artists_Tyler,
+    The Creator, Jay Prince", "required": true}, {"type": "double", "name": "featured_artists_Tyler,
+    The Creator, Kurupt", "required": true}, {"type": "double", "name": "featured_artists_Tyler,
+    The Creator, Nigo", "required": true}, {"type": "double", "name": "featured_artists_Tyler,
+    The Creator, Steve Lacy", "required": true}, {"type": "double", "name": "featured_artists_Tyler,
+    The Creator, Taco, Jasper Dolphin", "required": true}, {"type": "double", "name":
+    "featured_artists_Vince Staples", "required": true}, {"type": "double", "name":
+    "featured_artists_Wanya Morris, D\u0101M-FunK, Austin Feinstein, Syd", "required":
+    true}, {"type": "double", "name": "featured_artists_Wiz Khalifa, Juicy J, Tyler,
+    The Creator", "required": true}, {"type": "double", "name": "featured_artists_YG",
+    "required": true}, {"type": "double", "name": "featured_artists_YoungBoy Never
+    Broke Again, Ty Dolla $ign", "required": true}, {"type": "double", "name": "type_EP",
+    "required": true}, {"type": "double", "name": "type_Feature", "required": true},
+    {"type": "double", "name": "type_Instrumental Album", "required": true}, {"type":
+    "double", "name": "type_Single", "required": true}, {"type": "double", "name":
+    "type_Studio Album", "required": true}, {"type": "double", "name": "duration_00:36",
+    "required": true}, {"type": "double", "name": "duration_00:57", "required": true},
+    {"type": "double", "name": "duration_01:00", "required": true}, {"type": "double",
+    "name": "duration_01:06", "required": true}, {"type": "double", "name": "duration_01:09",
+    "required": true}, {"type": "double", "name": "duration_01:10", "required": true},
+    {"type": "double", "name": "duration_01:13", "required": true}, {"type": "double",
+    "name": "duration_01:25", "required": true}, {"type": "double", "name": "duration_01:28",
+    "required": true}, {"type": "double", "name": "duration_01:33", "required": true},
+    {"type": "double", "name": "duration_01:38", "required": true}, {"type": "double",
+    "name": "duration_01:45", "required": true}, {"type": "double", "name": "duration_01:49",
+    "required": true}, {"type": "double", "name": "duration_01:50", "required": true},
+    {"type": "double", "name": "duration_01:53", "required": true}, {"type": "double",
+    "name": "duration_01:55", "required": true}, {"type": "double", "name": "duration_01:57",
+    "required": true}, {"type": "double", "name": "duration_01:58", "required": true},
+    {"type": "double", "name": "duration_02:01", "required": true}, {"type": "double",
+    "name": "duration_02:07", "required": true}, {"type": "double", "name": "duration_02:08",
+    "required": true}, {"type": "double", "name": "duration_02:10", "required": true},
+    {"type": "double", "name": "duration_02:15", "required": true}, {"type": "double",
+    "name": "duration_02:18", "required": true}, {"type": "double", "name": "duration_02:25",
+    "required": true}, {"type": "double", "name": "duration_02:26", "required": true},
+    {"type": "double", "name": "duration_02:28", "required": true}, {"type": "double",
+    "name": "duration_02:29", "required": true}, {"type": "double", "name": "duration_02:31",
+    "required": true}, {"type": "double", "name": "duration_02:35", "required": true},
+    {"type": "double", "name": "duration_02:37", "required": true}, {"type": "double",
+    "name": "duration_02:38", "required": true}, {"type": "double", "name": "duration_02:39",
+    "required": true}, {"type": "double", "name": "duration_02:40", "required": true},
+    {"type": "double", "name": "duration_02:41", "required": true}, {"type": "double",
+    "name": "duration_02:46", "required": true}, {"type": "double", "name": "duration_02:48",
+    "required": true}, {"type": "double", "name": "duration_02:50", "required": true},
+    {"type": "double", "name": "duration_02:52", "required": true}, {"type": "double",
+    "name": "duration_02:54", "required": true}, {"type": "double", "name": "duration_02:55",
+    "required": true}, {"type": "double", "name": "duration_02:56", "required": true},
+    {"type": "double", "name": "duration_02:57", "required": true}, {"type": "double",
+    "name": "duration_02:59", "required": true}, {"type": "double", "name": "duration_03:00",
+    "required": true}, {"type": "double", "name": "duration_03:02", "required": true},
+    {"type": "double", "name": "duration_03:09", "required": true}, {"type": "double",
+    "name": "duration_03:10", "required": true}, {"type": "double", "name": "duration_03:11",
+    "required": true}, {"type": "double", "name": "duration_03:12", "required": true},
+    {"type": "double", "name": "duration_03:14", "required": true}, {"type": "double",
+    "name": "duration_03:15", "required": true}, {"type": "double", "name": "duration_03:16",
+    "required": true}, {"type": "double", "name": "duration_03:19", "required": true},
+    {"type": "double", "name": "duration_03:20", "required": true}, {"type": "double",
+    "name": "duration_03:21", "required": true}, {"type": "double", "name": "duration_03:22",
+    "required": true}, {"type": "double", "name": "duration_03:23", "required": true},
+    {"type": "double", "name": "duration_03:24", "required": true}, {"type": "double",
+    "name": "duration_03:25", "required": true}, {"type": "double", "name": "duration_03:26",
+    "required": true}, {"type": "double", "name": "duration_03:27", "required": true},
+    {"type": "double", "name": "duration_03:29", "required": true}, {"type": "double",
+    "name": "duration_03:30", "required": true}, {"type": "double", "name": "duration_03:31",
+    "required": true}, {"type": "double", "name": "duration_03:32", "required": true},
+    {"type": "double", "name": "duration_03:33", "required": true}, {"type": "double",
+    "name": "duration_03:34", "required": true}, {"type": "double", "name": "duration_03:36",
+    "required": true}, {"type": "double", "name": "duration_03:38", "required": true},
+    {"type": "double", "name": "duration_03:39", "required": true}, {"type": "double",
+    "name": "duration_03:40", "required": true}, {"type": "double", "name": "duration_03:42",
+    "required": true}, {"type": "double", "name": "duration_03:43", "required": true},
+    {"type": "double", "name": "duration_03:44", "required": true}, {"type": "double",
+    "name": "duration_03:45", "required": true}, {"type": "double", "name": "duration_03:46",
+    "required": true}, {"type": "double", "name": "duration_03:47", "required": true},
+    {"type": "double", "name": "duration_03:48", "required": true}, {"type": "double",
+    "name": "duration_03:49", "required": true}, {"type": "double", "name": "duration_03:50",
+    "required": true}, {"type": "double", "name": "duration_03:52", "required": true},
+    {"type": "double", "name": "duration_03:53", "required": true}, {"type": "double",
+    "name": "duration_03:54", "required": true}, {"type": "double", "name": "duration_03:55",
+    "required": true}, {"type": "double", "name": "duration_03:57", "required": true},
+    {"type": "double", "name": "duration_03:58", "required": true}, {"type": "double",
+    "name": "duration_04:00", "required": true}, {"type": "double", "name": "duration_04:07",
+    "required": true}, {"type": "double", "name": "duration_04:08", "required": true},
+    {"type": "double", "name": "duration_04:09", "required": true}, {"type": "double",
+    "name": "duration_04:10", "required": true}, {"type": "double", "name": "duration_04:13",
+    "required": true}, {"type": "double", "name": "duration_04:14", "required": true},
+    {"type": "double", "name": "duration_04:15", "required": true}, {"type": "double",
+    "name": "duration_04:16", "required": true}, {"type": "double", "name": "duration_04:25",
+    "required": true}, {"type": "double", "name": "duration_04:29", "required": true},
+    {"type": "double", "name": "duration_04:36", "required": true}, {"type": "double",
+    "name": "duration_04:37", "required": true}, {"type": "double", "name": "duration_04:42",
+    "required": true}, {"type": "double", "name": "duration_04:43", "required": true},
+    {"type": "double", "name": "duration_04:44", "required": true}, {"type": "double",
+    "name": "duration_04:47", "required": true}, {"type": "double", "name": "duration_04:51",
+    "required": true}, {"type": "double", "name": "duration_04:54", "required": true},
+    {"type": "double", "name": "duration_05:08", "required": true}, {"type": "double",
+    "name": "duration_05:09", "required": true}, {"type": "double", "name": "duration_05:10",
+    "required": true}, {"type": "double", "name": "duration_05:19", "required": true},
+    {"type": "double", "name": "duration_05:20", "required": true}, {"type": "double",
+    "name": "duration_05:22", "required": true}, {"type": "double", "name": "duration_05:34",
+    "required": true}, {"type": "double", "name": "duration_05:38", "required": true},
+    {"type": "double", "name": "duration_05:43", "required": true}, {"type": "double",
+    "name": "duration_05:49", "required": true}, {"type": "double", "name": "duration_06:15",
+    "required": true}, {"type": "double", "name": "duration_06:36", "required": true},
+    {"type": "double", "name": "duration_06:37", "required": true}, {"type": "double",
+    "name": "duration_06:41", "required": true}, {"type": "double", "name": "duration_06:48",
+    "required": true}, {"type": "double", "name": "duration_06:50", "required": true},
+    {"type": "double", "name": "duration_07:18", "required": true}, {"type": "double",
+    "name": "duration_07:20", "required": true}, {"type": "double", "name": "duration_08:00",
+    "required": true}, {"type": "double", "name": "duration_08:35", "required": true},
+    {"type": "double", "name": "duration_09:48", "required": true}, {"type": "double",
+    "name": "duration_10:36", "required": true}, {"type": "double", "name": "month_August",
+    "required": true}, {"type": "double", "name": "month_December", "required": true},
+    {"type": "double", "name": "month_February", "required": true}, {"type": "double",
+    "name": "month_January", "required": true}, {"type": "double", "name": "month_July",
+    "required": true}, {"type": "double", "name": "month_June", "required": true},
+    {"type": "double", "name": "month_March", "required": true}, {"type": "double",
+    "name": "month_May", "required": true}, {"type": "double", "name": "month_November",
+    "required": true}, {"type": "double", "name": "month_October", "required": true},
+    {"type": "double", "name": "month_September", "required": true}, {"type": "double",
+    "name": "day_of_the_week_Monday", "required": true}, {"type": "double", "name":
+    "day_of_the_week_Saturday", "required": true}, {"type": "double", "name": "day_of_the_week_Sunday",
+    "required": true}, {"type": "double", "name": "day_of_the_week_Thursday", "required":
+    true}, {"type": "double", "name": "day_of_the_week_Tuesday", "required": true},
+    {"type": "double", "name": "day_of_the_week_Wednesday", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int32", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2024-10-31 20:53:26.790762'

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/rafael/Documents/Proyectos/tyler_non_supervised_mlflow/package/mlruns/813426244754986435/e014db0f9d9e4367b7b1a25a6aee4f31/artifacts
+end_time: 1730408007964
+entry_point_name: ''
+experiment_id: '813426244754986435'
+lifecycle_stage: active
+run_id: e014db0f9d9e4367b7b1a25a6aee4f31
+run_name: kmeans_3
+run_uuid: e014db0f9d9e4367b7b1a25a6aee4f31
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730408006775
+status: 4
+tags: []
+user_id: rafael
