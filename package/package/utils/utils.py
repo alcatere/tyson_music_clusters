@@ -42,19 +42,12 @@ def log_results(data, labels, model, model_name, experiment_name:str, run_id:int
             calinski_harabasz = calinski_harabasz_score(data, labels)
             mlflow.log_metric("silhouette_score", silhouette)
             mlflow.log_metric("calinski_harabasz_score", calinski_harabasz)
+        else:
+            silhouette = 0
+            calinski_harabasz = 0
         
         # Log the model
         mlflow.sklearn.log_model(model, "clustering_model", signature=signature)
     
-    return silhouette_score, calinski_harabasz_score
-        # # Plot and log cluster visualization
-        # plt.figure(figsize=(8, 6))
-        # plt.scatter(data[:, 0], data[:, 1], c=labels, cmap='viridis', s=50, alpha=0.6)
-        # plt.title(f"{model_name} Clustering")
-        # plt.xlabel("Feature 1")
-        # plt.ylabel("Feature 2")
-        # plot = plt.colorbar(label="Cluster Label")
-        # # plt.savefig("cluster_plot.png")
-        # # mlflow.log_artifact("cluster_plot.png")
-        # mlflow.log_image(plot)
-        # plt.close()
+    return silhouette, calinski_harabasz
+

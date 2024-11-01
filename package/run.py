@@ -12,13 +12,12 @@ from pandas.core.common import flatten
 
 
 if __name__ == '__main__':
-    DATA_URL = 'https://storage.googleapis.com/kagglesdsdata/datasets/5890222/9708274/Tyler%20The%20Creator%20Dataset.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20241029%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20241029T201158Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=654147980d111273ff19d55bfd20c7a3e1298be83b3043690816ce2f0dfe4a8a579815039a5519210b6c27f50089f1dfccab80c499fbf1fc0d91ff949394300eaf5684b524703efe543f2cd882b41f9f32ab5dd18c9a7f27f08bf3b7857491e071b93d3a73720df29e003ade70abf61bee4717927bcb00f5fbe72985f1263154d4bbf96b3e4c92dcf4b08a96ae689fe578d1d134e23a1c886c65e63f3eb0692b19a9fd9392780cbda48a88585092f2d62868a8ce1b1529dca40afd6f33fe8ccc0f07b9eec87ee7013c9029ebd694b5b863b73dca514517ab930b73b2546bd8aa8fda043ab02627e1d090f1becd0a42696ac43387c9b54afe209413eed2bc1c4c'
-    
+    DATA_URL = 'https://storage.googleapis.com/kagglesdsdata/datasets/5890222/9781067/Tyler%20The%20Creator%20Dataset.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20241101%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20241101T214729Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=4e3531616180abb99172b7cd01396b0c07c55fd5769b8502e6ac32367edf479eeaa484b5ecd61a403b289d0698a4801f7b9d4b151c5130beefe020f220e7d878da2fa63eee18ed98476152f1354f55e0a77e8969bbaee951880778593781dd25f175f4e1f634a491d240f3f9d5fe62ef722cf17d2849008082b6d62af6a64a080cc898e783c8160aecc4cf97f6af6f14ceb510081b6d480bbd8aa5dfa2c7f382a52cf5d3503abdb05cab282f50b8dc54c1881bbb69c2fee5e99e180838c720a9032328f747036d3ea15ce7f00c72827aed39a24f17a8a4194aa5e4edda46116314049f32b4024668c8cb5523267095988fe3e08f460bd0dda2cf358e05370a7f'
     experiment_name = "Clustering Experiment"
     # run_name = 'clustering run'
 
     # Nums of clusters
-    cluster_range = (3, 10)
+    cluster_range = (3, 20)
 
     # Preprocess Data
     preprocessor = DataPreprocessor()
@@ -47,7 +46,7 @@ if __name__ == '__main__':
     for model in models:
         model.create_model()
         labels = model.fit_predict(process_df)
-        signature = infer_signature(process_df, labels)
+        signature = infer_signature(process_df, labels,)
         model_name = f'{model.model_name}_{model.n_clusters}' if model.model_name != 'dbscan' else 'dbscan'
 
         run_id = log_preprocessed_data(process_df,
@@ -66,14 +65,20 @@ if __name__ == '__main__':
                     signature, 
                     model.n_clusters)
         
+        print(f'\n Finish to log the model: {model_name}')
+        
         silhouette_scores[model.model_name].append(silhouette_score)
         calinski_scores[model.model_name].append(calinski_harabasz_score)
 
     # Plot the results
-    cluster_counts = range(cluster_range[0], cluster_range[1] + 1)
+   
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
     for model_name in silhouette_scores:
+        cluster_counts = list(range(cluster_range[0], cluster_range[1])) if model_name != 'dbscan' else [0]
+        # print(model_name)
+        # print(cluster_counts)
+        # print(silhouette_scores[model_name])
         axes[0].plot(cluster_counts, silhouette_scores[model_name], marker='o', label=model_name)
         axes[1].plot(cluster_counts, calinski_scores[model_name], marker='o', label=model_name)
     
@@ -82,11 +87,14 @@ if __name__ == '__main__':
     axes[0].set_xlabel("Number of Clusters")
     axes[0].set_ylabel("Silhouette Score")
     axes[0].legend()
+    axes[0].grid(True)
     
     axes[1].set_title("Calinski-Harabasz Score by Number of Clusters")
     axes[1].set_xlabel("Number of Clusters")
     axes[1].set_ylabel("Calinski-Harabasz Score")
     axes[1].legend()
+    axes[1].grid(True)
     
     plt.tight_layout()
-    plt.show()
+    plt.savefig('./images/scores.png')
+    # plt.show()
