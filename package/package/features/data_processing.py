@@ -39,6 +39,11 @@ class DataPreprocessor:
         :param df: Raw data as a pandas DataFrame.
         :return: Preprocessed data as a pandas DataFrame.
         """
+
+        # Drop columns that are no use
+        columns_drop = ['track_id']
+        df = df.drop(columns=columns_drop)
+
         # Separate numeric and categorical columns
         numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
         categorical_cols = df.select_dtypes(include=['object', 'bool']).columns

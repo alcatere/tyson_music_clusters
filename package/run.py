@@ -5,6 +5,8 @@ from package.utils.utils import log_results
 
 from mlflow.models.signature import infer_signature
 
+import matplotlib.pyplot as plt
+
 from pandas.core.common import flatten
 
 
@@ -15,15 +17,17 @@ if __name__ == '__main__':
     experiment_name = "Clustering Experiment"
     # run_name = 'clustering run'
 
+    # Nums of clusters
+    cluster_range = (3, 10)
+
+    # Preprocess Data
     preprocessor = DataPreprocessor()
     df = preprocessor.load_data(DATA_URL)
     process_df = preprocessor.preprocess_data(df)
-
-
-
     
-    kmeans_models = [ClusteringModel(model_name='kmeans', n_clusters=cluster) for cluster in range(3,10)]
-    agglomerative_models = [ClusteringModel(model_name='agglomerative', n_clusters=cluster) for cluster in range(3,10)]
+    # Make models with different clusters
+    kmeans_models = [ClusteringModel(model_name='kmeans', n_clusters=cluster) for cluster in range(cluster_range[0], cluster_range[1])]
+    agglomerative_models = [ClusteringModel(model_name='agglomerative', n_clusters=cluster) for cluster in range(cluster_range[0], cluster_range[1])]
 
 
     # List of models to try
@@ -33,8 +37,13 @@ if __name__ == '__main__':
         agglomerative_models
     ]
 
+    # Flatten the list
     models = list(flatten(models))
 
+    silhouette_scores = {model.model_name: [] for model in models}
+    calinski_scores = {model.model_name: [] for model in models}
+
+    # Log every model
     for model in models:
         model.create_model()
         labels = model.fit_predict(process_df)
@@ -48,7 +57,7 @@ if __name__ == '__main__':
                         preprocessor.encoding_method,
                         experiment_name)
         
-        log_results(process_df, 
+        silhouette_score, calinski_harabasz_score = log_results(process_df, 
                     labels, 
                     model, 
                     model_name, 
@@ -56,3 +65,28 @@ if __name__ == '__main__':
                     run_id,
                     signature, 
                     model.n_clusters)
+        
+        silhouette_scores[model.model_name].append(silhouette_score)
+        calinski_scores[model.model_name].append(calinski_harabasz_score)
+
+    # Plot the results
+    cluster_counts = range(cluster_range[0], cluster_range[1] + 1)
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+    for model_name in silhouette_scores:
+        axes[0].plot(cluster_counts, silhouette_scores[model_name], marker='o', label=model_name)
+        axes[1].plot(cluster_counts, calinski_scores[model_name], marker='o', label=model_name)
+    
+    # Customize plots
+    axes[0].set_title("Silhouette Score by Number of Clusters")
+    axes[0].set_xlabel("Number of Clusters")
+    axes[0].set_ylabel("Silhouette Score")
+    axes[0].legend()
+    
+    axes[1].set_title("Calinski-Harabasz Score by Number of Clusters")
+    axes[1].set_xlabel("Number of Clusters")
+    axes[1].set_ylabel("Calinski-Harabasz Score")
+    axes[1].legend()
+    
+    plt.tight_layout()
+    plt.show()

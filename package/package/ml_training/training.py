@@ -1,10 +1,4 @@
-import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering
-from sklearn.metrics import silhouette_score, calinski_harabasz_score
-
-import mlflow.sklearn
-
 class ClusteringModel:
     def __init__(self, model_name='kmeans', n_clusters=3):
         """
